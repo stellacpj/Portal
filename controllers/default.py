@@ -15,7 +15,7 @@ VPN_setting = namedtuple("VPN_setting", "Name AcceptASPath PeerNeighbor");
 
 TEMPLATE_ENVIRONMENT = Environment(
     autoescape=False,
-    loader=FileSystemLoader(os.path.join('/home/www-data/web2py/applications/JunosPortal/static', 'command_template')),
+    loader=FileSystemLoader(os.path.join('/home/www-data/web2py/applications/Portal/static', 'command_template')),
     trim_blocks=False)
 
 def index():
@@ -80,7 +80,7 @@ def create_commands(rows_rr,rows_vpn,rows_vpnstatic):
         'rows_vpnstatic':rows_vpnstatic
     }
     #
-    with open('/home/www-data/web2py/applications/JunosPortal/static/command_template/output.txt', 'w') as f:
+    with open('/home/www-data/web2py/applications/Portal/static/command_template/output.txt', 'w') as f:
         command_set = render_template('command_template.txt', context);
         f.write(command_set);
     return command_set
